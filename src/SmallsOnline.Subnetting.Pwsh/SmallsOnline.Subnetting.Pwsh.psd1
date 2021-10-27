@@ -97,13 +97,17 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @(
+            "networking",
+            "subnetting",
+            "subnet"
+        )
 
         # A URL to the license for this module.
-        LicenseUri = "https://raw.githubusercontent.com/Smalls1652/SmallsOnline.Subnetting/main/LICENSE"
+        LicenseUri = "https://raw.githubusercontent.com/Smalls1652/SmallsOnline.Subnetting.Pwsh/main/LICENSE"
 
         # A URL to the main website for this project.
-        ProjectUri = "https://github.com/Smalls1652/SmallsOnline.Subnetting"
+        ProjectUri = "https://github.com/Smalls1652/SmallsOnline.Subnetting.Pwsh"
 
         # A URL to an icon representing this module.
         # IconUri = ""
@@ -112,7 +116,7 @@ PrivateData = @{
         # ReleaseNotes = ""
 
         # Prerelease string of this module
-        # Prerelease = ""
+        Prerelease = "alpha-01"
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         RequireLicenseAcceptance = $false
