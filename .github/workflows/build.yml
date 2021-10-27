@@ -12,14 +12,23 @@ jobs:
         configuration: [ 'Release' ]
     env:
       DOTNET_NOLOGO: true
+    permissions:
+      contents: read
+      packages: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Setup dotnet SDK
         uses: actions/setup-dotnet@v1
         with:
          dotnet-version: '5.0.x'
+
       - name: Run 'dotnet restore'
         run: dotnet restore "SmallsOnline.Subnetting.Pwsh.sln"
+
+      - name: Configure GitHub package registry source
+        run: dotnet nuget add source --username Smalls1652 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Smalls1652/index.json"
+
       - name: Run MSBuild
         run: dotnet msbuild "SmallsOnline.Subnetting.Pwsh.sln" -target:"Restore;Clean;Build;Publish;BuildModuleDir" -property:"Configuration=${{ matrix.configuration }};DebugType=none;DebugSymbols=false"
