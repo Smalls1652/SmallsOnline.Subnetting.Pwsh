@@ -28,6 +28,6 @@ jobs:
         run: dotnet msbuild "SmallsOnline.Subnetting.Pwsh.sln" -target:"Restore;Clean;Build;Publish;BuildModuleDir" -property:"Configuration=Release;DebugType=none;DebugSymbols=false"
 
       - name: Publish PowerShell Module
-        uses: pwsh
+        shell: pwsh
         run: |
           Publish-Module -Path "./build/SmallsOnline.Subnetting.Pwsh/" -NuGetApiKey "${{ secrets.PWSH_GALLERY_KEY }}" -Repository "PSGallery" -Verbose
