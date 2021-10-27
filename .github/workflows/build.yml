@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+name: Build
+on:
+  - push
+  - pull_request
+jobs:
+  build-pwsh-module:
+    name: Build PowerShell module
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration: [ 'Release' ]
+    env:
+      DOTNET_NOLOGO: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup dotnet SDK
+        uses: actions/setup-dotnet@v1
+        with:
+         dotnet-version: '5.0.x'
+      - name: Run 'dotnet restore'
+        run: dotnet restore "SmallsOnline.Subnetting.Pwsh.sln"
+      - name: Run MSBuild
+        run: dotnet msbuild "SmallsOnline.Subnetting.Pwsh.sln" -target:"Restore;Clean;Build;Publish;BuildModuleDir" -property:"Configuration=${{ matrix.configuration }};DebugType=none;DebugSymbols=false"
