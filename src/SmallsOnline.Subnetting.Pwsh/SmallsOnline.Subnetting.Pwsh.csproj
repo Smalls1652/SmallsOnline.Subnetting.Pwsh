@@ -8,7 +8,7 @@
     <Company>Smalls.Online</Company>
     <RepositoryUrl>https://github.com/Smalls1652/SmallsOnline.Subnetting</RepositoryUrl>
     <VersionPrefix>2021.10.00</VersionPrefix>
-    <VersionSuffix>alpha-01</VersionSuffix>
+    <VersionSuffix>alpha-02</VersionSuffix>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 
@@ -32,7 +32,7 @@
     <None Update="SmallsOnline.Subnetting.Pwsh.psd1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <PackageReference Include="SmallsOnline.Subnetting.Lib" Version="2021.10.0-alpha-02" />
+    <PackageReference Include="SmallsOnline.Subnetting.Lib" Version="2021.10.0-alpha-03" />
   </ItemGroup>
 
   <Target Name="BuildModuleDir">
