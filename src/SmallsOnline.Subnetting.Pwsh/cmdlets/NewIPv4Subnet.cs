@@ -6,8 +6,8 @@ namespace SmallsOnline.Subnetting.Pwsh.Cmdlets
 {
     using Lib.Models;
 
-    [Cmdlet(VerbsCommon.New, "Subnet")]
-    public class NewSubnet : PSCmdlet
+    [Cmdlet(VerbsCommon.New, "IPv4Subnet")]
+    public class NewIPv4Subnet : PSCmdlet
     {
         [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Default")]
         [ValidateNotNullOrEmpty()]
