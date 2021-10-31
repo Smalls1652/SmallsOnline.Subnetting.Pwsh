@@ -12,7 +12,7 @@
             "args": [
                 "msbuild",
                 "SmallsOnline.Subnetting.Pwsh.sln",
-                "-target:Restore;Clean;Build;Publish;BuildModuleDir",
+                "-target:Restore;Clean;CompileHelpFile;Build;Publish;BuildModuleDir",
                 "-property:Configuration=${input:projectConfigType};DebugType=${input:buildDebugType};DebugSymbols=${input:buildDebugSymbols}",
                 "-noLogo",
                 "/property:GenerateFullPaths=true"
