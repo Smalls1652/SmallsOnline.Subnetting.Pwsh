@@ -35,7 +35,7 @@
     <None Update="SmallsOnline.Subnetting.Pwsh.dll-Help.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <PackageReference Include="SmallsOnline.Subnetting.Lib" Version="2021.10.0-alpha-03" />
+    <PackageReference Include="SmallsOnline.Subnetting.Lib" Version="2021.10.0-alpha-04" />
   </ItemGroup>
 
   <Target Name="CompileHelpFile">
